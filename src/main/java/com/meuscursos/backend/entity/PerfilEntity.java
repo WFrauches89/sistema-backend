@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -25,6 +26,9 @@ public class PerfilEntity {
 
     @Column(nullable = false)
     private String descricao;
+
+    @OneToMany(mappedBy = "perfilEntity",cascade = CascadeType.ALL)
+    private List<PerfilUsuarioEntity> perfilUsuariosList;
 
 
     public PerfilEntity(PerfilDTO perfilDTO) {

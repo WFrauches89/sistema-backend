@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.beans.BeanUtils;
 
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -33,6 +34,9 @@ public class UsuarioEntity {
 
     @Column(nullable = false, unique = true)
     private String email;
+
+    @OneToMany(mappedBy = "usuarioEntity", cascade = CascadeType.ALL)
+    private List<PerfilUsuarioEntity> usuarioPerfisList;
 
     public UsuarioEntity(UsuarioDTO usuarioEntityDTO) {
         BeanUtils.copyProperties(usuarioEntityDTO, this);
