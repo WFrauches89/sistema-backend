@@ -23,14 +23,15 @@ public class UsuarioEntity {
     private String nome;
 
     private String sobrenome;
+
     @Column(nullable = false, unique = true)
     private String login;
 
     @Column(nullable = false, unique = true)
-    private String emailAddress;
+    private String senha;
 
     @Column(nullable = false, unique = true)
-    private String senha;
+    private String email;
 
     public UsuarioEntity(UsuarioDTO usuarioEntityDTO) {
         BeanUtils.copyProperties(usuarioEntityDTO, this);
@@ -41,11 +42,11 @@ public class UsuarioEntity {
     public boolean equals(Object object) {
         if (this == object) return true;
         if (!(object instanceof UsuarioEntity that)) return false;
-        return Objects.equals(id, that.id) && Objects.equals(emailAddress, that.emailAddress);
+        return Objects.equals(id, that.id) && Objects.equals(email, that.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, emailAddress);
+        return Objects.hash(id, email);
     }
 }

@@ -17,8 +17,8 @@ public class UsuarioDTO {
     private String nome;
     private String sobrenome;
     private String login;
-    private String emailAddress;
     private String senha;
+    private String email;
 
     public UsuarioDTO(UsuarioEntity usuarioEntity) {
         BeanUtils.copyProperties(usuarioEntity,this);

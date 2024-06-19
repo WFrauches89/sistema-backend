@@ -23,19 +23,21 @@ public class UsuarioController {
 
     @GetMapping("/{id}")
     public UsuarioDTO getUserById(@PathVariable Long id){
-        System.out.println("Entrou aqui Controller");
         return usuarioService.getUserByID(id);
     }
+
     @Transactional
     @PostMapping
     public void createUser(@RequestBody UsuarioDTO usuarioDTO){
         usuarioService.createUser(usuarioDTO);
     }
+
     @Transactional
     @PutMapping("/{id}")
     public UsuarioDTO updateUsers(@PathVariable Long id, @RequestBody UsuarioDTO usuarioDto){
        return usuarioService.updateUsers(usuarioDto);
     }
+
     @Transactional
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id){
