@@ -1,15 +1,12 @@
 package com.meuscursos.backend.dto;
 
-import com.meuscursos.backend.entity.Recursos;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.meuscursos.backend.entity.RecursosEntity;
+import lombok.*;
 import org.springframework.beans.BeanUtils;
 
-import java.util.Objects;
-
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(of = "id")
 @NoArgsConstructor
 public class RecursosDTO {
 
@@ -17,19 +14,8 @@ public class RecursosDTO {
     private String nome;
     private String chave;
 
-    public RecursosDTO(Recursos recursos) {
+    public RecursosDTO(RecursosEntity recursos) {
         BeanUtils.copyProperties(recursos, this);
     }
 
-    @Override
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (!(object instanceof RecursosDTO that)) return false;
-        return Objects.equals(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 }

@@ -8,7 +8,8 @@ import org.springframework.beans.BeanUtils;
 
 import java.util.Objects;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity

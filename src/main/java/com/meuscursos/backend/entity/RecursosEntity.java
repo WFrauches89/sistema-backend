@@ -2,19 +2,18 @@ package com.meuscursos.backend.entity;
 
 import com.meuscursos.backend.dto.RecursosDTO;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.beans.BeanUtils;
 
 import java.util.Objects;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "recursos")
-public class Recursos {
+public class RecursosEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,14 +25,14 @@ public class Recursos {
     @Column(nullable = false)
     private String chave;
 
-    public Recursos(RecursosDTO recursosDTO) {
+    public RecursosEntity(RecursosDTO recursosDTO) {
         BeanUtils.copyProperties(recursosDTO, this);
     }
 
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;
-        if (!(object instanceof Recursos recursos)) return false;
+        if (!(object instanceof RecursosEntity recursos)) return false;
         return Objects.equals(id, recursos.id);
     }
 

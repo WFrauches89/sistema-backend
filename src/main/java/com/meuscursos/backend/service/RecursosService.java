@@ -1,7 +1,7 @@
 package com.meuscursos.backend.service;
 
 import com.meuscursos.backend.dto.RecursosDTO;
-import com.meuscursos.backend.entity.Recursos;
+import com.meuscursos.backend.entity.RecursosEntity;
 import com.meuscursos.backend.repository.RecursosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class RecursosService {
     private RecursosRepository repository;
 
     public List<RecursosDTO> getAll(){
-        List<Recursos> recursosList = repository.findAll();
+        List<RecursosEntity> recursosList = repository.findAll();
         return recursosList.stream().map(RecursosDTO::new).toList();
     }
 
@@ -24,12 +24,12 @@ public class RecursosService {
     }
 
     public void createRecurso(RecursosDTO recursosDTO){
-        Recursos novoRecurso = new Recursos(recursosDTO);
+        RecursosEntity novoRecurso = new RecursosEntity(recursosDTO);
         repository.save(novoRecurso);
     }
 
     public RecursosDTO updateRecurso(RecursosDTO recursosDTO){
-        Recursos recursoToUpdate = new Recursos(recursosDTO);
+        RecursosEntity recursoToUpdate = new RecursosEntity(recursosDTO);
         return new RecursosDTO(repository.save(recursoToUpdate));
     }
 

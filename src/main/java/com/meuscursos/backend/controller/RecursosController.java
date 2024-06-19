@@ -1,9 +1,6 @@
 package com.meuscursos.backend.controller;
 
 import com.meuscursos.backend.dto.RecursosDTO;
-import com.meuscursos.backend.dto.UsuarioDTO;
-import com.meuscursos.backend.entity.Recursos;
-import com.meuscursos.backend.repository.RecursosRepository;
 import com.meuscursos.backend.service.RecursosService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

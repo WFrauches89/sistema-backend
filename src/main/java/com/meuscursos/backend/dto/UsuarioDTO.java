@@ -2,12 +2,12 @@ package com.meuscursos.backend.dto;
 
 
 import com.meuscursos.backend.entity.UsuarioEntity;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.beans.BeanUtils;
 
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(of = "id")
 @AllArgsConstructor
 @NoArgsConstructor
 public class UsuarioDTO {
