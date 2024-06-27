@@ -1,6 +1,7 @@
 package com.meuscursos.backend.dto;
 
 
+import com.meuscursos.backend.entity.UserStatusEnumType;
 import com.meuscursos.backend.entity.UsuarioEntity;
 import lombok.*;
 import org.springframework.beans.BeanUtils;
@@ -19,6 +20,7 @@ public class UsuarioDTO {
     private String login;
     private String senha;
     private String email;
+    private UserStatusEnumType status;
 
     public UsuarioDTO(UsuarioEntity usuarioEntity) {
         BeanUtils.copyProperties(usuarioEntity,this);

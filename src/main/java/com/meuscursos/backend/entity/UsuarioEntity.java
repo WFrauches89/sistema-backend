@@ -35,6 +35,10 @@ public class UsuarioEntity {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private UserStatusEnumType status;
+
     @OneToMany(mappedBy = "usuarioEntity", cascade = CascadeType.ALL)
     private List<PerfilUsuarioEntity> usuarioPerfisList;
 

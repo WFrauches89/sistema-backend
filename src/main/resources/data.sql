@@ -1,5 +1,5 @@
-INSERT INTO my_users(id, email, login, nome, senha, sobrenome)
-	VALUES (1, 'wfrauches89@gmail.com', 'Wfrauches89', 'Wanderson', '123WaF', 'Frauches');
+INSERT INTO my_users(id, email, login, nome, senha, sobrenome, status)
+	VALUES (1, 'wfrauches89@gmail.com', 'Wfrauches89', 'Wanderson', '123WaF', 'Frauches', 'ATIVO');
 
 ALTER SEQUENCE my_users_ID_SEQ RESTART WITH 2;
 
