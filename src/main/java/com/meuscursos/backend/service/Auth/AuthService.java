@@ -66,14 +66,12 @@ public class AuthService {
     public AccessDTO login(AuthenticationDTO authenticationDTO){
 
         try{
-            System.out.println("authenticationDTOSenha: "+authenticationDTO.getPassword()+"authenticationDTO Username: "+authenticationDTO.getUsername());
+
             UsernamePasswordAuthenticationToken userAuth =
                     new UsernamePasswordAuthenticationToken(authenticationDTO.getUsername(), authenticationDTO.getPassword());
-           // UsernamePasswordAuthenticationToken userAuth2 = new UsernamePasswordAuthenticationToken(authenticationDTO.getUsername(), authenticationDTO.getPassword());
-            System.out.println("auth:"+userAuth.getPrincipal());
+
             Authentication authentication = authenticatioManager.authenticate(userAuth);
-            //Authentication authenticationMngr = authenticationManager.authenticate(userAuth);
-            System.out.println("authentication : "+authentication);
+
             UserDetailsImplDTO userAuthenticated = (UserDetailsImplDTO) authentication.getPrincipal();
 
             String tokenFromUserAuthenticated = jwtMethodsUtils.generateTokenFromUserDetailsImplDTO(userAuthenticated);

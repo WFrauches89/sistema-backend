@@ -29,7 +29,8 @@ public class UsuarioController {
     @Transactional
     @PostMapping
     public void createUser(@RequestBody UsuarioDTO usuarioDTO){
-        usuarioService.createUser(usuarioDTO);
+        String word = "Private";
+        usuarioService.createUser(usuarioDTO, word);
     }
 
     @Transactional

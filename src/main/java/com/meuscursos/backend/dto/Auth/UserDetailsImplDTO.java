@@ -41,17 +41,11 @@ import java.util.Collection;
 public class UserDetailsImplDTO implements UserDetails {
 
     private Long id;
-
     private String name;
-
     private String username;
-
     private String email;
-
     private String password;
-
     private Collection<? extends GrantedAuthority> authorities;
-
     public UserDetailsImplDTO(Long id, String name, String username, String password, String email,  Collection<? extends GrantedAuthority> authorities) {
         super();
         this.id = id;
@@ -61,7 +55,6 @@ public class UserDetailsImplDTO implements UserDetails {
         this.email = email;
         this.authorities = authorities;
     }
-
     public static UserDetailsImplDTO build(UsuarioEntity usuario) {
 
         return new UserDetailsImplDTO(

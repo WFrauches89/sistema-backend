@@ -2,6 +2,7 @@ package com.meuscursos.backend.entity;
 
 
 import com.meuscursos.backend.dto.UsuarioDTO;
+import com.meuscursos.backend.entity.enums.UserStatusEnumType;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.beans.BeanUtils;

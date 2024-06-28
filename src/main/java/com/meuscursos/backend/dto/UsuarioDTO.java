@@ -1,7 +1,7 @@
 package com.meuscursos.backend.dto;
 
 
-import com.meuscursos.backend.entity.UserStatusEnumType;
+import com.meuscursos.backend.entity.enums.UserStatusEnumType;
 import com.meuscursos.backend.entity.UsuarioEntity;
 import lombok.*;
 import org.springframework.beans.BeanUtils;
